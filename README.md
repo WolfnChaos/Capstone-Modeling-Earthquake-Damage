@@ -74,7 +74,8 @@ Driven Data also obfuscated random lowercase ascii characters to the categorical
 
 The main dataset that is being used dosen't have any missing values but some of the features are boolean but read as int64. Using a loob to change the type of this features from int64 to bool. Now all the categorical columns are represented by an obfuscated random lowercase ascii character, we can use the some of the original dataset to find out what the letters represent. 
 
-|land_surface_condition|
+land_surface_condition
+|Label| Count|
 |:-----| :-----|
 |Flat|              631675|
 |Moderate slope|    105640|
@@ -92,7 +93,7 @@ Looking at the print out it looks like most of the random values in the dataset 
 
 Lets take a look at are target classes and see what kind of counts we have.
 
-![classes]('Images/classes.png')
+![classes](Images/classes.png)
 
 Looks like are classes are imbalance this may cuase an issues down the road when we start training are models.
 
@@ -100,13 +101,13 @@ Looks like are classes are imbalance this may cuase an issues down the road when
 
 #### Superstructure
 
-![has_superstructure_mud_mortar_stone]('Images/has_superstructure_mud_mortar_stone.png')
+![has_superstructure_mud_mortar_stone](Images/has_superstructure_mud_mortar_stone.png)
 
 Well over half of the structures are made form a mix of mud, mortar and stone, yet the one that aren't have more buildings with low damage then the once that didn't.
 
 #### Roof Types
 
-![roof_type]('Images/roof_type.png')
+![roof_type](Images/roof_type.png)
 
 Seems like almost all roof types are made of Bamboo and Timber ranging from light to heavy roofs. They seem to have equal matching precentages acoss the three damage grades while buildings that have RCC/RB/RBC has equal amounts of low and med with no grade 3 damage.
 
@@ -126,7 +127,7 @@ For the FSM we will use just the numerical and boolean columns and the classifie
 |Precision:| 0.6073121797582424|
 |F1:| 0.6109604665814518|
 
-![cm_fsm]('Images/cm_fsm.png')
+![cm_fsm](Images/cm_fsm.png)
 
 The training recall score for the FSM is 0.97 and the test is 0.61 a sure sign that the model is over fit whict tree tend to do.
 
@@ -211,7 +212,7 @@ Now we will use the prepocessed data to train and test some vms. The models that
 
 Out of the five models that was ran, KNeighborsClassifier had both the highest train/test scores. Random Forest Classifer had the highest train score, but being that Random Forest tents to over fit easy. Will be using both of these models for hyperparameter tuning in the following GridSearch.
 
-![cm_vm]('Images/cm_vm.png')
+![cm_vm](Images/cm_vm.png)
 
 The best model out of the Vanilla Models 15.6% for the test data are being classified as a false negative.
 
