@@ -20,10 +20,10 @@ README.md: You are currently reading this.
 
 ### Links
 
-Data Used: https://www.drivendata.org/
-Original Data: http://eq2015.npc.gov.np/#/
-Presentation: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/Presentation%20Slide%20Deck.pdf
-Final Notebook: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/FInal_Notebook.ipynb
+Data Used: https://www.drivendata.org/  
+Original Data: http://eq2015.npc.gov.np/#/  
+Presentation: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/Presentation%20Slide%20Deck.pdf  
+Final Notebook: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/FInal_Notebook.ipynb  
 
 ## Overview
 
