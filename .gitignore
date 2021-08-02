@@ -1,8 +1,12 @@
 # Pickle
-Pickle/*
+Pickle/gird_search_knc
+Pickle/gird_search_rfc
+Pickle/kneighbors_vm
+Pickle/random_forest_vm
 
 # Data file
-Data/*
+Data/csv_building_damage_assessment.csv
+Data/csv_building_structure.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
