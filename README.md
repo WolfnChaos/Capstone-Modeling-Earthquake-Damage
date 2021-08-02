@@ -1,5 +1,22 @@
 # Capstone-Modeling-Earthquake-Damage
+
 Capstone project for Flatiorn School
+
+## Repo Info
+
+### Folders
+
+Data: Data used for this repo. (due to size original data not included link at bottom)
+Images: All images used for this repo.
+PDF: PDF forms of capstone deliverables: Final_Notebook.ipynb, Presentation Slide Deck.pdf, and README.md
+Pickle: Models that are pickle for faster computation time when running notebook. (due to size bigger models not included in this repo)
+Working Notebook: Olded note books that was saved when making changes and wanted to keep the old notebook.
+
+### Files
+
+Final_Notebook.ipynb: Fisished tech notebook.
+Presentation Slide Deck.pdf: This is the slide deck that was used when doing final capstone presentation.
+README.md: You are currently reading this.
 
 ## Overview
 
@@ -70,12 +87,15 @@ Driven Data also obfuscated random lowercase ascii characters to the categorical
 |has_secondary_use_use_police| binary| flag variable that indicates if the building was used as a police station.|
 |has_secondary_use_other (type: binary):| flag variable that indicates if the building was secondarily used for other purposes.|
 
+### Limitations
+
+Being that the target of this dataset has an imbalance class count could be an issues when trying to get insights during exploratory data analysis and have an issues for pick features for modeling.
+
 ## Data Preparation
 
 The main dataset that is being used dosen't have any missing values but some of the features are boolean but read as int64. Using a loob to change the type of this features from int64 to bool. Now all the categorical columns are represented by an obfuscated random lowercase ascii character, we can use the some of the original dataset to find out what the letters represent. 
 
-land_surface_condition
-|Label| Count|
+|land_surface_condition|
 |:-----| :-----|
 |Flat|              631675|
 |Moderate slope|    105640|
@@ -93,7 +113,7 @@ Looking at the print out it looks like most of the random values in the dataset 
 
 Lets take a look at are target classes and see what kind of counts we have.
 
-![classes](Images/classes.png)
+![classes]('Images/classes.png')
 
 Looks like are classes are imbalance this may cuase an issues down the road when we start training are models.
 
@@ -101,13 +121,13 @@ Looks like are classes are imbalance this may cuase an issues down the road when
 
 #### Superstructure
 
-![has_superstructure_mud_mortar_stone](Images/has_superstructure_mud_mortar_stone.png)
+![has_superstructure_mud_mortar_stone]('Images/has_superstructure_mud_mortar_stone.png')
 
 Well over half of the structures are made form a mix of mud, mortar and stone, yet the one that aren't have more buildings with low damage then the once that didn't.
 
 #### Roof Types
 
-![roof_type](Images/roof_type.png)
+![roof_type]('Images/roof_type.png')
 
 Seems like almost all roof types are made of Bamboo and Timber ranging from light to heavy roofs. They seem to have equal matching precentages acoss the three damage grades while buildings that have RCC/RB/RBC has equal amounts of low and med with no grade 3 damage.
 
@@ -127,7 +147,7 @@ For the FSM we will use just the numerical and boolean columns and the classifie
 |Precision:| 0.6073121797582424|
 |F1:| 0.6109604665814518|
 
-![cm_fsm](Images/cm_fsm.png)
+![cm_fsm]('Images/cm_fsm.png')
 
 The training recall score for the FSM is 0.97 and the test is 0.61 a sure sign that the model is over fit whict tree tend to do.
 
@@ -212,7 +232,7 @@ Now we will use the prepocessed data to train and test some vms. The models that
 
 Out of the five models that was ran, KNeighborsClassifier had both the highest train/test scores. Random Forest Classifer had the highest train score, but being that Random Forest tents to over fit easy. Will be using both of these models for hyperparameter tuning in the following GridSearch.
 
-![cm_vm](Images/cm_vm.png)
+![cm_vm]('Images/cm_vm.png')
 
 The best model out of the Vanilla Models 15.6% for the test data are being classified as a false negative.
 
@@ -270,7 +290,7 @@ Best Recall Score: 0.6340557495650673
 
 ## Final Model Evaluation
 
-With the recall test score being 70.8% the k neighors classifer is still the best model after using grid scearch to hyperparameter tune. With the first simple model being 61.5% that is an impovement of 9.3%.
+With the recall test score being 70.8% the k neighors classifer is still the best model after using grid scearch to hyperparameter tune. With the first simple model being 61.5% that is an impovement of 9.3%. Using this current model we can classify a Napal building's damage grade level, if and only 29.2% of the time will the building be misclassified as a lower level if and when another major earthquake occurs.
 
 ![cm_gs](Images/cm_gs.png)
 
@@ -294,3 +314,9 @@ In order to get the feature importance from an KNeighors Classifier we will have
 |count_families| 0.045260|
 
 Now that we have the feature importance from the final model we can see that roof type and founfation type are the top two most important features.
+
+## Links
+
+Data Used: https://www.drivendata.org/
+original Data: http://eq2015.npc.gov.np/#/
+Presentation: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/Presentation%20Slide%20Deck.pdf
