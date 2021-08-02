@@ -6,17 +6,17 @@ Capstone project for Flatiorn School
 
 ### Folders
 
-Data: Data used for this repo. (due to size original data not included link at bottom)
-Images: All images used for this repo.
-PDF: PDF forms of capstone deliverables: Final_Notebook.ipynb, Presentation Slide Deck.pdf, and README.md
-Pickle: Models that are pickle for faster computation time when running notebook. (due to size bigger models not included in this repo)
-Working Notebook: Olded note books that was saved when making changes and wanted to keep the old notebook.
+> Data: Data used for this repo. (due to size original data not included link at bottom)  
+> Images: All images used for this repo.  
+> PDF: PDF forms of capstone deliverables: Final_Notebook.ipynb, Presentation Slide Deck.pdf, and README.md  
+> Pickle: Models that are pickle for faster computation time when running notebook. (due to size bigger models not included in this repo)  
+> Working Notebook: Olded note books that was saved when making changes and wanted to keep the old notebook.  
 
 ### Files
 
-Final_Notebook.ipynb: Fisished tech notebook.
-Presentation Slide Deck.pdf: This is the slide deck that was used when doing final capstone presentation.
-README.md: You are currently reading this.
+> Final_Notebook.ipynb: Fisished tech notebook.  
+> Presentation Slide Deck.pdf: This is the slide deck that was used when doing final capstone presentation.  
+> README.md: You are currently reading this.  
 
 ## Overview
 
