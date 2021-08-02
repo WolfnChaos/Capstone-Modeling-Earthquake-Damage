@@ -18,6 +18,13 @@ Final_Notebook.ipynb: Fisished tech notebook.
 Presentation Slide Deck.pdf: This is the slide deck that was used when doing final capstone presentation.  
 README.md: You are currently reading this.  
 
+### Links
+
+Data Used: https://www.drivendata.org/
+Original Data: http://eq2015.npc.gov.np/#/
+Presentation: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/Presentation%20Slide%20Deck.pdf
+Final Notebook: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/FInal_Notebook.ipynb
+
 ## Overview
 
 A magnitude 7.8 earthquake struck Nepal on April 25, 2015, toppling multi-story buildings in Kathmandu, the capital, and creating landslides and avalanches in the Himalaya Mountains. Nearly 9,000 people died and more than 22,000 suffered injuries.
@@ -95,15 +102,17 @@ Being that the target of this dataset has an imbalance class count could be an i
 
 The main dataset that is being used dosen't have any missing values but some of the features are boolean but read as int64. Using a loob to change the type of this features from int64 to bool. Now all the categorical columns are represented by an obfuscated random lowercase ascii character, we can use the some of the original dataset to find out what the letters represent. 
 
-|land_surface_condition|
+### land_surface_condition
+
+|Value| Count|
 |:-----| :-----|
-|Flat|              631675|
-|Moderate slope|    105640|
-|Steep slope|        24791|
-|||
-|t|    216757|
-|n|     35528|
-|o|      8316|
+|Flat| 631675|
+|Moderate slope| 105640|
+|Steep slope| 24791|
+| | |
+|t| 216757|
+|n| 35528|
+|o| 8316|
 
 Looking at the print out it looks like most of the random values in the dataset do correspond to the original dataset. Will use the values to replace the random values.
 
@@ -113,7 +122,7 @@ Looking at the print out it looks like most of the random values in the dataset 
 
 Lets take a look at are target classes and see what kind of counts we have.
 
-![classes]('Images/classes.png')
+![classes](Images/classes.png)
 
 Looks like are classes are imbalance this may cuase an issues down the road when we start training are models.
 
@@ -121,13 +130,13 @@ Looks like are classes are imbalance this may cuase an issues down the road when
 
 #### Superstructure
 
-![has_superstructure_mud_mortar_stone]('Images/has_superstructure_mud_mortar_stone.png')
+![has_superstructure_mud_mortar_stone](Images/has_superstructure_mud_mortar_stone.png)
 
 Well over half of the structures are made form a mix of mud, mortar and stone, yet the one that aren't have more buildings with low damage then the once that didn't.
 
 #### Roof Types
 
-![roof_type]('Images/roof_type.png')
+![roof_type](Images/roof_type.png)
 
 Seems like almost all roof types are made of Bamboo and Timber ranging from light to heavy roofs. They seem to have equal matching precentages acoss the three damage grades while buildings that have RCC/RB/RBC has equal amounts of low and med with no grade 3 damage.
 
@@ -232,7 +241,7 @@ Now we will use the prepocessed data to train and test some vms. The models that
 
 Out of the five models that was ran, KNeighborsClassifier had both the highest train/test scores. Random Forest Classifer had the highest train score, but being that Random Forest tents to over fit easy. Will be using both of these models for hyperparameter tuning in the following GridSearch.
 
-![cm_vm]('Images/cm_vm.png')
+![cm_vm](Images/cm_vm.png)
 
 The best model out of the Vanilla Models 15.6% for the test data are being classified as a false negative.
 
@@ -314,9 +323,3 @@ In order to get the feature importance from an KNeighors Classifier we will have
 |count_families| 0.045260|
 
 Now that we have the feature importance from the final model we can see that roof type and founfation type are the top two most important features.
-
-## Links
-
-Data Used: https://www.drivendata.org/
-original Data: http://eq2015.npc.gov.np/#/
-Presentation: https://github.com/WolfnChaos/Capstone-Modeling-Earthquake-Damage/blob/main/Presentation%20Slide%20Deck.pdf
