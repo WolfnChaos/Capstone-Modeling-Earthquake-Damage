@@ -156,7 +156,7 @@ For the FSM we will use just the numerical and boolean columns and the classifie
 |Precision:| 0.6073121797582424|
 |F1:| 0.6109604665814518|
 
-![cm_fsm]('Images/cm_fsm.png')
+![cm_fsm](Images/cm_fsm.png)
 
 The training recall score for the FSM is 0.97 and the test is 0.61 a sure sign that the model is over fit whict tree tend to do.
 
