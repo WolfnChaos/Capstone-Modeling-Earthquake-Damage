@@ -2,6 +2,8 @@
 
 Capstone project for Flatiorn School
 
+![banner](Images/banner.jpeg)
+
 ## Repo Info
 
 ### Folders
